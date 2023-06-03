@@ -5,14 +5,12 @@ import os
 from logo import Logo
 from dotenv import load_dotenv
 load_dotenv()
-EMAIL_CHECKER_API = "YOUR API GOES HERE"
-VIRUS_TOTAL_API = "YOUR API GOES HERE"
-SENDER_CHECKER_API = "YOUR API GOES HERE"
+VIRUS_TOTAL_API = "YOUR API GOES HERE" ### https://developers.virustotal.com/reference/overview
+SENDER_CHECKER_API = "YOUR API GOES HERE" ### https://www.abstractapi.com/api/email-verification-validation-api
 print(Logo.logo)
-#TODO CREATE GITHUB REPO, COMMIT CHANGES AND PUSH TO GITHUB AND CREATE README
 sender_address = input("Let's start first by checking sender's email. Input email address here: ")
 email_content = input('Enter the email content here: ')
-link_content = input('If email contains link to any website, please enter the website name, e.g: : ')
+link_content = input('If email contains any link enter it here, if not just press enter')
 link_bytes = link_content.encode('ascii')
 link_encoded = base64.urlsafe_b64encode('https://linkdelivery.vmware.com/ls/click'.encode()).decode().strip("=")
 positive_impact = 0
